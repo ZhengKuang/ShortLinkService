@@ -4,11 +4,22 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"flag"
+	"log"
+
 
 )
 
+var(
+	port string
+)
+
+
 func main(){
-	http.ListenAndServe(":8080",&BaseHandler{})
+	flag.StringVar(&port,"port",":8080","port to listen")
+	flag.Parse()
+	log.Println("ShortURL server will start at prot "+port)
+	log.Fatalln(http.ListenAndServe(port,&BaseHandler{}))
 }
 
 
