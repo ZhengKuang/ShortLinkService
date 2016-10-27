@@ -1,14 +1,10 @@
 package controllers
 
-import (
-	"github.com/astaxie/beego"
-)
-
 type UrlController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *UrlController) Get() {
-	c.Ctx.WriteString("This is UrlController:Get")
+	c.success("dasfasdf")
 
 }
