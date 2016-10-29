@@ -190,3 +190,15 @@ func (handler *BaseHandler) ServeHTTP(resp http.ResponseWriter, req *http.Reques
 http://127.0.0.1:8080/a/b/c?a=123
 ```
 这行里面，url是http://127.0.0.1:8080/a/b/c，？代表参数分隔符，其中参数a=123
+
+##又看了一遍源代码
+
+
+总的来说，LIstenandserve这个方法会调用第二个参数的serveHTTP方法，ListenandServe方法的第二个参数，需要传一个Handler的接口过去，这个handler的接口必须要含有
+```sh
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+```
+ServeHTTP方法，如果传入的参数是nil的话，就会调用默认的mux（里面有ServeHTTp方法），如果是自己写mux，需要
+包括一个方法，方法名称是ServeHTTP，而且自己可以写handle和handlefunc
