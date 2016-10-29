@@ -186,3 +186,7 @@ func (handler *BaseHandler) ServeHTTP(resp http.ResponseWriter, req *http.Reques
 直接调用BaseHandler的方法ServeHTTP
 
 
+```sh
+http://127.0.0.1:8080/a/b/c?a=123
+```
+这行里面，url是http://127.0.0.1:8080/a/b/c，？代表参数分隔符，其中参数a=123
