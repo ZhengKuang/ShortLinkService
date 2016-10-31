@@ -30,7 +30,7 @@ func (url *Url) Insert() error {
 	return GetDB().C(URL_COLLECTION).Insert(url)
 }
 
-func (url *Url) FindbyId() error {
+func (url *Url) FindById() error {
 	return GetDB().C(URL_COLLECTION).FindId(url.Id).One(url)
 
 }
