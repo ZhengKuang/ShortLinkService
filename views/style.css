@@ -1,0 +1,26 @@
+body{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #eee;
+}
+
+
+div.main {
+        padding-top:80px;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+}
+
+div.show {
+        text-align: center;        
+        padding-top:40px;
+        text-align: center;
+}
+.result {
+         text-decoration:underline;
+         cursor: pointer;
+}
+
+a#message {
+        color: red;
+}

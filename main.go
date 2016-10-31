@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	//	"fmt"
 	"short-url/controllers"
 
 	"github.com/astaxie/beego"
@@ -17,5 +17,10 @@ func main() {
 	flag.Parse()
 
 	beego.RESTRouter("api/url", &controllers.UrlController{})
+
+	beego.Router("/*", &controllers.RedirectController{})
+
+	beego.SetStaticPath("/public", "views")
+
 	beego.Run(port)
 }
